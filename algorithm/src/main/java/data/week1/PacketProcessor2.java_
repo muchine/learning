@@ -1,0 +1,135 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Request {
+
+    int arrivalTime;
+    int processTime;
+    int startTime = -1;
+    int endTime;
+    boolean dropped;
+
+    public Request(int arrivalTime, int processTime) {
+        this.arrivalTime = arrivalTime;
+        this.processTime = processTime;
+    }
+
+    public void setup(int startTime) {
+        this.startTime = startTime;
+        this.endTime = this.startTime + this.processTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Request{" +
+                "arrivalTime=" + arrivalTime +
+                ", processTime=" + processTime +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", dropped=" + dropped +
+                '}';
+    }
+}
+
+class Buffer {
+
+    private final int size;
+    private final List<Request> queue = new ArrayList<>();
+
+    public Buffer(int size) {
+        this.size = size;
+    }
+
+    public boolean add(Request request) {
+        complete(request.arrivalTime);
+
+        if (queue.size() >= size) return false;
+
+        int estimated = estimatedEndTime();
+        request.setup(estimated == -1 ? request.arrivalTime : estimated);
+
+        queue.add(request);
+        return true;
+    }
+
+    public void complete(int time) {
+        if (queue.isEmpty()) return;
+
+        List<Request> completed = new ArrayList<>();
+
+        for (Request request : queue) {
+            if (request.endTime <= time) completed.add(request);
+        }
+
+        for (Request request : completed) {
+            boolean result = queue.remove(request);
+            if (!result) throw new RuntimeException("failed to remove the request from the queue.");
+        }
+    }
+
+    private int estimatedEndTime() {
+        if (queue.isEmpty()) return -1;
+
+        return queue.get(queue.size() - 1).endTime;
+    }
+
+}
+
+class PacketProcessor {
+
+    private final List<Request> requests;
+
+    private final Buffer buffer;
+
+    public PacketProcessor(List<Request> requests, int bufferSize) {
+        this.requests = requests;
+        this.buffer = new Buffer(bufferSize);
+    }
+
+    public void processRequests() {
+        for (Request request : requests) {
+            boolean added = buffer.add(request);
+            if (!added) {
+                request.dropped = true;
+            }
+        }
+
+        int maxArrivalTime = 2000000;
+        buffer.complete(maxArrivalTime);
+    }
+
+    private static List<Request> ReadQueries(Scanner scanner) throws IOException {
+        int requests_count = scanner.nextInt();
+        ArrayList<Request> requests = new ArrayList<Request>();
+        for (int i = 0; i < requests_count; ++i) {
+            int arrival_time = scanner.nextInt();
+            int process_time = scanner.nextInt();
+            requests.add(new Request(arrival_time, process_time));
+        }
+        return requests;
+    }
+
+    private static void PrintResponses(List<Request> requests) {
+        for (int i = 0; i < requests.size(); ++i) {
+            Request response = requests.get(i);
+            if (response.dropped) {
+                System.out.println(-1);
+            } else {
+                System.out.println(response.startTime);
+            }
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+
+        int buffer_max_size = scanner.nextInt();
+
+        List<Request> requests = ReadQueries(scanner);
+        PacketProcessor p = new PacketProcessor(requests, buffer_max_size);
+        p.processRequests();
+        PrintResponses(requests);
+    }
+}

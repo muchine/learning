@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff000055"
+        android:padding="4dp"
+        android:text="여기에 사용자 이름을 입력하고 추가 버튼을 누르면 어떻게 될까 크크"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:textColor="#88ff8888"
+        android:singleLine="true"
+        android:gravity="center"/>
+</LinearLayout>

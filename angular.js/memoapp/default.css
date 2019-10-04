@@ -1,0 +1,229 @@
+.label-list-pane {
+  display: inline-block;
+  border: solid 1px #cdcdcd;
+  width: 230px;
+  height: 800px;
+  margin: 10px 5px 5px 5px;
+  background-color: #fff;
+  float: left;
+}
+
+.label-list-pane .list {
+  list-style: none;
+  margin-left: -40px;
+  margin-bottom: 0;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+.label-list-pane .item {
+  height: 50px;
+  border-bottom: solid 1px #cdcdcd;
+  box-sizing: border-box;
+}
+
+.label-list-pane .item .name {
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 120px;
+  float: left;
+  display: block;
+}
+
+.label-list-pane .item .box {
+  padding-left: 9px;
+  padding: 15px 5px 5px 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.memo-list-pane {
+  display: inline-block;
+  float: left;
+  width: 310px;
+  height: 800px;
+  margin: 10px 5px 5px 5px;
+  background-color: #fff;
+  border: solid 1px #cdcdcd;
+}
+
+.memo-list-pane .header {
+  border-bottom: solid 1px #cdcdcd;
+  height: 50px;
+}
+
+.memo-list-pane .left-label-container {
+  float: left;
+  height: 100%;
+  padding: 8px 8px 0 0;
+}
+
+.memo-list-pane .left-label-text {
+  display: inline-block;
+  margin-top: 4px;
+  margin-left: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 120px;
+  float: left;
+}
+
+.memo-list-pane .right-button-group {
+  float: right;
+  height: 100%;
+  padding: 8px 8px 0 0;
+}
+
+.memo-list-pane .body {
+  margin-bottom: -1px;
+  overflow-x: hidden;
+}
+
+.memo-list-pane .item {
+  position: relative;
+  background-color: #e9f6f2;
+  transition: background-color .2s ease;
+  -webkit-user-select: none;
+  border-bottom: solid 1px #cdcdcd;
+  height: 83px;
+  display: table;
+  width: 100%;
+}
+
+.memo-list-pane .checkbox {
+  display: table-cell;
+  width: 43px;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.memo-list-pane .content {
+  cursor: pointer;
+  display: table-cell;
+  width: 170px;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.memo-list-pane .title-container {
+  display: table-cell;
+  height: 50px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.memo-list-pane .title-text {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 120px;
+  float: left;
+}
+
+.memo-list-pane .preview-text {
+  display: inline-block;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 120px;
+  float: left;
+}
+
+.memo-list-pane .preview {
+  height: 31px;
+}
+
+.memo-list-pane .date {
+  cursor: pointer;
+  display: table-cell;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.memo-list-pane .date-text {
+  display: inline-block;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 120px;
+  float: left;
+}
+
+.memo-list-pane .check {
+  color: rgba(0,0,0,0.54);
+  font-size: 18px;
+}
+
+.memo-list-pane .box {
+  border-left: 6px solid #15a181;
+  padding-left: 9px;
+  padding: 15px 5px 5px 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.memo-content-pane {
+  display: inline-block;
+  width: 600px;
+  height: 800px;
+  margin: 10px 5px 5px 5px;
+  float: left;
+  border: solid 1px #cdcdcd;
+}
+
+.memo-content-pane .header {
+  height: 50px;
+  border-bottom: solid 1px #cdcdcd;
+}
+
+.memo-content-pane .title {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 530px;
+  padding-top: 12px;
+  padding-left: 8px;
+}
+
+.memo-content-pane .right-button-group {
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 8px 8px 0 0;
+  height: 20px
+}
+
+.memo-content-pane .date-container {
+  height: 20px;
+  padding-top: 4px;
+  text-align: right;
+}
+
+.memo-content-pane .date {
+  padding-right: 8px;
+}
+
+.memo-content-pane .content-container {
+  height: 100%;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.text {
+  font-size: 17px;
+  font-weight: 400;
+}

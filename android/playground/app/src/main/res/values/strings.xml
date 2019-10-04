@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Playground</string>
+    <string name="banner_text">This is banner</string>
+    <string name="tab1">Tab #1</string>
+    <string name="tab2">Tab #2</string>
+    <string name="simple_text">Hey, this is simple text!</string>
+</resources>

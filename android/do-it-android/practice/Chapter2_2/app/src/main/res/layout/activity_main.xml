@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:text="아래 버튼을 클릭하시면 인플레이션으로 추가합니다"
+        android:textSize="14dp"
+        android:textColor="#ffad6535"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="인플레이션으로 추가하기"
+            android:textSize="10dp"
+            android:onClick="onButton1Clicked"/>
+        <Button
+            android:id="@+id/newActivityButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="액티비티 띄우기"
+            android:textSize="10dp"
+            android:onClick="onNewActivityClicked"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/callNumber"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="tel:010-1000-1001"
+            android:textSize="10dp"/>
+        <Button
+            android:id="@+id/callButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="전화걸기"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            android:onClick="onCallButtonClicked"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/pdfLocation"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="PDF 파일명을 입력하세요."
+            android:textSize="10dp"/>
+        <Button
+            android:id="@+id/showPdfButton"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="열기"
+            android:textSize="10dp"
+            android:textStyle="bold"
+            android:onClick="onPdfButtonClicked"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/startServiceButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="서비스 시작"
+            android:textSize="10dp"
+            android:onClick="onStartServiceButtonClicked"/>
+        <Button
+            android:id="@+id/stopServiceButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="서비스 중지"
+            android:textSize="10dp"
+            android:onClick="onStopServiceButtonClicked"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/contentsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    </LinearLayout>
+</LinearLayout>
