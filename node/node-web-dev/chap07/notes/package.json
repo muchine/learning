@@ -1,0 +1,24 @@
+{
+  "name": "notes",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "DEBUG=notes:* node ./bin/www",
+    "server1": "DEBUG=notes:* PORT=3001 node ./bin/www",
+    "server2": "DEBUG=notes:* PORT=3002 node ./bin/www"
+  },
+  "dependencies": {
+    "fs-extra": "8.1.0",
+    "bootstrap": "4.3.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "feather-icons": "4.24.1",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "jquery": "3.4.1",
+    "morgan": "~1.9.1",
+    "popper.js": "1.15.0",
+    "rotating-file-stream": "^1.4.6"
+  }
+}

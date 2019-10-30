@@ -1,0 +1,9 @@
+{
+  "name": "chap05",
+  "version": "1.0.0",
+  "dependencies": {
+    "co": "4.6.0",
+    "express-generator": "^4.16.1",
+    "fs-extra": "8.1.0"
+  }
+}
